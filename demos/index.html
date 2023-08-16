@@ -1,14 +1,166 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
+    <title>Abdullah Zafar</title>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Demos</title>
-</head>
-<body>
-    <ul>
-        <li><a href="/demos/proximity_hover/"> Proximity Hover </a></li>
-    </ul>
-    
-</body>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      * {
+        box-sizing: border-box;
+        color: white;
+      }
+
+      /* Style the body */
+      body {
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+      }
+
+      /* Header/logo Title */
+      .header {
+        padding: 80px;
+        text-align: center;
+        background: black;
+        color: white;
+      }
+
+      /* Increase the font size of the heading */
+      .header h1 {
+        font-size: 40px;
+      }
+
+      /* Style the top navigation bar */
+      .navbar {
+        overflow: hidden;
+        background-color: #222;
+        padding: 0px 10px
+      }
+
+      /* Style the navigation bar links */
+      .navbar a {
+        float: left;
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 20px;
+        text-decoration: none;
+      }
+
+      /* Right-aligned link */
+      .navbar a.right {
+        float: right;
+      }
+
+      /* Change color on hover */
+      .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+
+      /* Column container */
+      .row {  
+        display: -ms-flexbox; /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap; /* IE10 */
+        flex-wrap: wrap;
+      }
+
+      /* Create two unequal columns that sits next to each other */
+      /* Sidebar/left column */
+      .side {
+        -ms-flex: 30%; /* IE10 */
+        flex: 30%;
+        background-color: #333;
+        padding: 20px;
+      }
+
+      #profile-image:hover {
+        transform: translateY(-8px);
+        transition-duration: 0.3s;
+        transition-property: transform;
+      }
+
+      /* Main column */
+      .main {   
+        -ms-flex: 70%; /* IE10 */
+        flex: 70%;
+        background-color: #444;
+        padding: 20px;
+      }
+
+      /* Fake image, just for this example */
+      .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+
+      /* Footer */
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: black;
+      }
+
+      /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
+      @media screen and (max-width: 700px) {
+        .row {   
+          flex-direction: column;
+        }
+      }
+
+      /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
+      @media screen and (max-width: 400px) {
+        .navbar a {
+          float: none;
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Abdullah Zafar</h1>
+      <p>Senior Software Engineer @ <a href="https://arbisoft.com" target="_blank">Arbisoft</a></p>
+    </div>
+
+    <div class="navbar">
+      <a href="/">Home</a>
+      <a href="/demos">Demos</a>
+      <a href="https://github.com/mabdullahz" target="_blank">Github</a>
+      <a href="https://linkedin.com/in/mabdullahz" target="_blank">LinkedIn</a>
+      <a href="mailto:mabdullahzafar08@gmail.com">Email</a>
+      <span id="confetti" style="float:right; font-size: 35px; cursor: pointer;">👨🏽‍💻</span>
+    </div>
+
+    <div class="row">
+      <div class="side">
+        <h2>About Me</h2>
+        <p> Experienced software engineer, currently working at Arbisoft. Skilled in Python/Django, ReactJS and NodeJS based Software Development with MongoDB, MySQL and PostgreSQL databases. Strong engineering professional with a BS-CS from LUMS </p>
+        <img id="profile-image" src="images/profile_image.jpg" style="max-width: 100%;" alt="Abdullah's photo"/>
+        <h3> Noteable project </h3>
+        <p> <a href="https://play.xiangqi.com" target="_blank"> <img src="https://static1.squarespace.com/static/5fae7ee3a079b0732627205c/t/6130cd8286f0e53e618cad44/1630588290632/icon-xiangqi.com.svg" style="max-width: 100%; background-color: #555; padding: 20px" alt="Link to xiangqi.com"> </a> </p>
+      </div>
+      <div class="main">
+        <h2>Demos</h2>
+        <ul>
+            <li><a href="/demos/proximity_hover/"> Proximity Hover </a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© <span id="copyright-year"> </span>  mabdullahz.github.io</p>
+    </div>
+
+    <script src="confetti.min.js"></script>
+    <script>
+      document.getElementById("copyright-year").innerHTML = new Date().getFullYear();
+      let confetti = new Confetti("confetti");
+      confetti.setCount(300);
+      confetti.setPower(35);
+      confetti.setSize(1);
+      confetti.destroyTarget(false);
+    </script>
+  </body>
 </html>
