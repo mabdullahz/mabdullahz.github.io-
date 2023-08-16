@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proximity Hover Demo</title>
+    <script defer src="js/app.js"></script>
+    <style>
+        body {
+            background-color: gray;
+            color: white;
+            padding: 0;
+            margin: 0;
+        }
+        main {
+            display: grid;
+            place-items: center;
+            min-height: 100vh;
+            position: relative;
+        }
+        #anchor {
+            border: 1px solid red;
+        }
+        #eyes, #eyes img {
+            position: absolute;
+            transition: all 0.5s ease-out;
+        }
+    </style>
+</head>
+<body>
+
+    <main>
+        <img src="images/sb.png" alt="spongebob" id="anchor" width="600px" height="500px">
+        <div id="eyes">
+            <img src="images/eye.png" alt="spongebobs eye" class="eye" style="top: -164px; right: -90px;">
+            <img src="images/eye.png" alt="spongebobs eye" class="eye" style="top: -148px; right: -12px;">
+        </div>
+    </main>
+    
+</body>
+</html>
